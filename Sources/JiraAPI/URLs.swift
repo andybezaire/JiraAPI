@@ -23,16 +23,6 @@ public extension JiraAPI.URL {
 
 // MARK: - URLComponents utils
 
-extension URLComponents {
-    /// Create a `URL` from the components
-    /// - Throws: `JiraAPI.URL.Error.malformedURL(components)` with `self`
-    /// - Returns: the non-optional `URL`
-    func createURL() throws -> URL {
-        guard let url = url else { throw JiraAPI.Error.malformedURL(self) }
-        return url
-    }
-}
-
 private extension URLComponents {
     init(rootPath path: String, queryItems: [URLQueryItem]? = nil) {
         self.init()
