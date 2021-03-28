@@ -7,10 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- added changelog
-- added urls and requests for loggin in
 ### Changed
 ### Deprecated
 ### Removed
 ### Fixed
 ### Security
+
+## [0.1.0] - 2021-03-28
+### Added
+- added changelog
+- added urls and requests for loggin in
+- set up readme with initial version
+
+[Unreleased]: https://github.com/andybezaire/JiraAPI/compare/0.1.0...HEAD
+[0.1.0]: https://github.com/andybezaire/JiraAPI/releases/tag/0.1.0
