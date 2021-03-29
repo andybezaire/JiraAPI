@@ -19,7 +19,7 @@ public extension JiraAPI.Auth.Request {
             .method(.POST)
             .header(.contentTypeApplicationJSON)
             .body(
-                JiraAPI.Auth.Models.OauthTokenRequestBody(
+                JiraAPI.Models.OauthTokenRequestBody(
                     clientID: clientID,
                     clientSecret: clientSecret,
                     code: code,

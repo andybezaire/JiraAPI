@@ -16,7 +16,6 @@ public extension JiraAPI {
 public extension JiraAPI.Auth {
     enum URL {}
     enum Request {}
-    enum Models {}
 
     typealias ClientID = String
     typealias Scope = String

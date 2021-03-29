@@ -25,7 +25,7 @@ final class AuthRequestTests: XCTestCase {
 
         XCTAssertEqual(request.httpMethod, "POST", "should be post request")
 
-        let body = JiraAPI.Auth.Models
+        let body = JiraAPI.Models
             .OauthTokenRequestBody(clientID: clientID, clientSecret: clientSecret, code: code, redirectURI: redirectURI)
         let encodedBody = try JSONEncoder().encode(body)
         XCTAssertEqual(request.httpBody, encodedBody, "should be signed with bearer token")

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension JiraAPI.Auth.Models {
+public extension JiraAPI.Models {
     /// - client_id: (required) Set this to the Client ID for your app.
     /// Find this in Settings for your app in the developer console.
     /// - client_secret: (required) Set this to the Secret for your app.

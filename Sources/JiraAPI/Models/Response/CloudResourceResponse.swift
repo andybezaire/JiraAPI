@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension JiraAPI.Models {
+public extension JiraAPI.Models {
     struct CloudResourceResponse: Decodable {
         let id: JiraAPI.Auth.CloudID
         let name: String

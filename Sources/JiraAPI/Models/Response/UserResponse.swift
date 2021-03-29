@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension JiraAPI.Models {
+public extension JiraAPI.Models {
     struct UserResponse: Decodable {
         let `self`: Foundation.URL
         let accountId: String

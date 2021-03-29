@@ -17,7 +17,7 @@ final class AuthModelTests: XCTestCase {
 
         let expectedJSON = #"{"client_id":"CLIENT_ID","code":"CODE","redirect_uri":"REDIRECT_URI","client_secret":"CLIENT_SECRET","grant_type":"authorization_code"}"#
 
-        let object = JiraAPI.Auth.Models
+        let object = JiraAPI.Models
             .OauthTokenRequestBody(clientID: clientID, clientSecret: clientSecret, code: code, redirectURI: redirectURI)
 
         let body = try JSONEncoder().encode(object)
