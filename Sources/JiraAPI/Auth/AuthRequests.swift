@@ -8,7 +8,7 @@
 import Foundation
 
 /// JiraAPI Authorization Related `URLRequest`s
-extension JiraAPI.Auth.Request {
+public extension JiraAPI.Auth.Request {
     static func oauthToken(
         clientID: JiraAPI.Auth.ClientID,
         clientSecret: JiraAPI.Auth.ClientSecret,
@@ -19,7 +19,7 @@ extension JiraAPI.Auth.Request {
             .method(.POST)
             .header(.contentTypeApplicationJSON)
             .body(
-                JiraAPI.Auth.OauthTokenRequestBody(
+                JiraAPI.Auth.Models.OauthTokenRequestBody(
                     clientID: clientID,
                     clientSecret: clientSecret,
                     code: code,

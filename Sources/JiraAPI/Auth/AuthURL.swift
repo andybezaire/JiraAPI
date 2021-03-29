@@ -8,7 +8,7 @@
 import Foundation
 
 /// JiraAPI Authorization Related `URL`s
-extension JiraAPI.Auth.URL {
+public extension JiraAPI.Auth.URL {
     // MARK: - URLs
 
     /// URL used to get an authorization code

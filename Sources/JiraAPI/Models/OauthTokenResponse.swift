@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension JiraAPI {
+extension JiraAPI.Models {
     struct OauthTokenResponse: Decodable {
         let access_token: JiraAPI.Auth.Token
         let expires_in: Int?

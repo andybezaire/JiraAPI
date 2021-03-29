@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 ### Changed
+- moved models to Models scope instead of being in JiraAPI or JiraAPI.Auth
+- made urls and requests, models public
 ### Deprecated
 ### Removed
 ### Fixed

@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension JiraAPI.Request {
+public extension JiraAPI.Request {
     // MARK: - URLRequests
 
     /// Get the array of cloud resources for a user

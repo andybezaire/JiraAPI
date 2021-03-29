@@ -6,12 +6,15 @@
 //
 
 /// This creates all of the `URL`s and `URLRequest`s needed for accessing the Jira API
-public enum JiraAPI {
-    public static var scheme = "https"
-    public static var host = "api.atlassian.com"
-    public static var rootPath = "/ex/jira"
-    public static var apiRoot = "/rest/api/3"
+public enum JiraAPI {}
 
-    public enum URL {}
-    public enum Request {}
+public extension JiraAPI {
+    static var scheme = "https"
+    static var host = "api.atlassian.com"
+    static var rootPath = "/ex/jira"
+    static var apiRoot = "/rest/api/3"
+
+    enum URL {}
+    enum Request {}
+    enum Models {}
 }

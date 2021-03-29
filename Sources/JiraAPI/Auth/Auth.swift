@@ -7,15 +7,16 @@
 
 import Foundation
 
-extension JiraAPI {
+public extension JiraAPI {
     enum Auth {
         static var host = "auth.atlassian.com"
     }
 }
 
-extension JiraAPI.Auth {
+public extension JiraAPI.Auth {
     enum URL {}
     enum Request {}
+    enum Models {}
 
     typealias ClientID = String
     typealias Scope = String

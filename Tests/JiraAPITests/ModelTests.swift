@@ -12,7 +12,7 @@ import XCTest
 
 final class ModelTests: XCTestCase {
     func testUserResponse() throws {
-        let expectedUser = JiraAPI.UserResponse(
+        let expectedUser = JiraAPI.Models.UserResponse(
             self: URL(string: "https://your-domain.atlassian.net/rest/api/3/user?accountId=5b10a2844c20165700ede21g")!,
             accountId: "5b10a2844c20165700ede21g",
             emailAddress: "mia@example.com",
@@ -50,7 +50,7 @@ final class ModelTests: XCTestCase {
         }
         """.data(using: .utf8)!
 
-        let decodedUser = try JSONDecoder().decode(JiraAPI.UserResponse.self, from: response)
+        let decodedUser = try JSONDecoder().decode(JiraAPI.Models.UserResponse.self, from: response)
 
         XCTAssertEqual(decodedUser.displayName, expectedUser.displayName, "should be encoded to JSON properly")
     }
