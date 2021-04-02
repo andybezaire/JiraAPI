@@ -1,6 +1,6 @@
 //
 //  OauthTokenResponse.swift
-//  
+//
 //
 //  Created by Andy Bezaire on 28.3.2021.
 //
@@ -14,5 +14,8 @@ public extension JiraAPI.Models {
         let refresh_token: JiraAPI.Auth.RefreshToken?
         let scope: JiraAPI.Auth.Scope?
         let token_type: String?
+
+        public var token: JiraAPI.Auth.Token { access_token }
+        public var refresh: JiraAPI.Auth.RefreshToken? { refresh_token }
     }
 }
