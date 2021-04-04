@@ -22,11 +22,12 @@ public extension JiraAPI.Models {
         let code: JiraAPI.Auth.Code
         let redirect_uri: JiraAPI.Auth.RedirectURI
 
-        init(clientID: JiraAPI.Auth.ClientID,
-             clientSecret: JiraAPI.Auth.ClientSecret,
-             code: JiraAPI.Auth.Code,
-             redirectURI: JiraAPI.Auth.RedirectURI)
-        {
+        init(
+            clientID: JiraAPI.Auth.ClientID,
+            clientSecret: JiraAPI.Auth.ClientSecret,
+            code: JiraAPI.Auth.Code,
+            redirectURI: JiraAPI.Auth.RedirectURI
+        ) {
             self.client_id = clientID
             self.client_secret = clientSecret
             self.code = code
