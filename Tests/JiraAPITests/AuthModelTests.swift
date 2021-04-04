@@ -25,7 +25,23 @@ final class AuthModelTests: XCTestCase {
         XCTAssertEqual(String(data: body, encoding: .utf8), expectedJSON, "should be encoded to JSON properly")
     }
 
+    func testOauthTokenRefreshRequestBody() throws {
+        let clientID = "CLIENT_ID"
+        let refreshToken = "REFRESH_TOKEN"
+        let clientSecret = "CLIENT_SECRET"
+
+        let expectedJSON = #"{"client_id":"CLIENT_ID","refresh_token":"REFRESH_TOKEN","client_secret":"CLIENT_SECRET","grant_type":"refresh_token"}"#
+
+        let object = JiraAPI.Models
+            .OauthTokenRefreshRequestBody(clientID: clientID, clientSecret: clientSecret, refreshToken: refreshToken)
+
+        let body = try JSONEncoder().encode(object)
+
+        XCTAssertEqual(String(data: body, encoding: .utf8), expectedJSON, "should be encoded to JSON properly")
+    }
+
     static var allTests = [
         ("testOauthTokenRequestBody", testOauthTokenRequestBody),
+        ("testOauthTokenRefreshRequestBody", testOauthTokenRefreshRequestBody),
     ]
 }
