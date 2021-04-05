@@ -9,12 +9,18 @@ import Foundation
 
 public extension JiraAPI.Models {
     struct UserResponse: Decodable {
-        let `self`: Foundation.URL
+        let `self`: URL
         let accountId: String
         let emailAddress: String?
-        let avatarUrls: [String: Foundation.URL]
+        let avatarUrls: [String: URL]
         let displayName: String
         let active: Bool
         let expand: String?
+        
+        public var id: String { accountId }
+        public var email: String? { emailAddress }
+        public var avatars: [String: URL] { avatarUrls }
+        public var name: String { displayName }
+        public var account: URL { self.`self` }
     }
 }
