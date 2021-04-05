@@ -7,15 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- response object access modified
-- OauthTokenResponse tests
-- Oauth token refresh request body
 ### Changed
 ### Deprecated
 ### Removed
 ### Fixed
-- tidyd package file
 ### Security
+
+## [0.2.0] - 2021-04-05
+### Added
+- response object access modified
+- OauthTokenResponse tests
+- Oauth token refresh request body
+### Removed
+- token signing no longer done in this module
+### Fixed
+- tidyd package file
 
 ## [0.1.2] - 2021-03-29
 ### Changed
@@ -33,7 +39,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - added urls and requests for loggin in
 - set up readme with initial version
 
-[Unreleased]: https://github.com/andybezaire/JiraAPI/compare/0.1.2...HEAD
+[Unreleased]: https://github.com/andybezaire/JiraAPI/compare/0.2.0...HEAD
+[0.2.0]: https://github.com/andybezaire/JiraAPI/compare/0.1.2...0.2.0
 [0.1.2]: https://github.com/andybezaire/JiraAPI/compare/0.1.1...0.1.2
 [0.1.1]: https://github.com/andybezaire/JiraAPI/compare/0.1.0...0.1.1
 [0.1.0]: https://github.com/andybezaire/JiraAPI/releases/tag/0.1.0
