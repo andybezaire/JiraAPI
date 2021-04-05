@@ -10,9 +10,7 @@ import XCTest
 
 final class RequestTests: XCTestCase {
     func testCloudResources() throws {
-            let token = "TOKEN"
-
-            let request: URLRequest = try JiraAPI.Request.cloudResources(token: token)
+            let request: URLRequest = try JiraAPI.Request.cloudResources()
 
             let expectedURL = "https://api.atlassian.com" +
                 "/oauth/token/accessible-resources"
@@ -20,15 +18,10 @@ final class RequestTests: XCTestCase {
             XCTAssertEqual(request.url?.absoluteString, expectedURL, "should be correct cloud resources url")
 
             XCTAssertEqual(request.httpMethod, "GET", "should be get request")
-
-            let authorization = request.allHTTPHeaderFields?["Authorization"]
-            XCTAssertEqual(authorization, "Bearer TOKEN", "should be signed with bearer token")
         }
 
         func testMyself() throws {
-            let token = "TOKEN"
-
-            let request: URLRequest = try JiraAPI.Request.myself(token: token, cloudID: "11223344-a1b2-3b33-c444-def123456789")
+            let request: URLRequest = try JiraAPI.Request.myself(cloudID: "11223344-a1b2-3b33-c444-def123456789")
 
             let expectedURL = "https://api.atlassian.com" +
                 "/ex/jira" +
@@ -38,9 +31,6 @@ final class RequestTests: XCTestCase {
             XCTAssertEqual(request.url?.absoluteString, expectedURL, "should be correct myself url")
 
             XCTAssertEqual(request.httpMethod, "GET", "should be get request")
-
-            let authorization = request.allHTTPHeaderFields?["Authorization"]
-            XCTAssertEqual(authorization, "Bearer TOKEN", "should be signed with bearer token")
         }
 
 
