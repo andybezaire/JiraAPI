@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 ### Security
 
-## [0.2.1] - 2021-04-11
+## [0.3.0] - 2021-04-11
 ### Added
 - public api for response objects
 
