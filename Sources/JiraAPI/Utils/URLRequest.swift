@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  URLRequest.swift
 //  
 //
 //  Created by Andy Bezaire on 28.3.2021.

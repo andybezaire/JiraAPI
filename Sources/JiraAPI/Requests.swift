@@ -18,6 +18,12 @@ public extension JiraAPI.Request {
     }
 
     static func myself(cloudID: JiraAPI.Auth.CloudID) throws -> URLRequest {
-        return URLRequest(url: try JiraAPI.URL.myself(cloudID: cloudID))
+        URLRequest(url: try JiraAPI.URL.myself(cloudID: cloudID))
+    }
+    
+    /// Retrieve the public profile of the authenticated user
+    /// - Returns: `URLRequest` for the public profile of the authenticated user
+    static func me() throws -> URLRequest {
+        URLRequest(url: try JiraAPI.URL.me())
     }
 }

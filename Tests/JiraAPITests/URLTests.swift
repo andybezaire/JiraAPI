@@ -28,10 +28,19 @@ final class URLTests: XCTestCase {
 
             XCTAssertEqual(myselfURL.absoluteString, expected, "should be correct myself url")
         }
+    
+    func testMeURL() throws {
+        let expected = "https://api.atlassian.com" +
+            "/me"
 
+        let meURL = try JiraAPI.URL.me()
+
+        XCTAssertEqual(meURL.absoluteString, expected, "should be correct me url")
+    }
 
     static var allTests = [
         ("testCloudResourcesURL", testCloudResourcesURL),
         ("testMyselfURL", testMyselfURL),
+        ("testMeURL", testMeURL),
     ]
 }

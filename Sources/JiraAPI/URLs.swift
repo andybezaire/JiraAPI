@@ -19,6 +19,11 @@ public extension JiraAPI.URL {
     static func myself(cloudID: String) throws -> URL {
         try URLComponents(cloudID: cloudID, path: "/myself").createURL()
     }
+    
+    /// `"/me"`
+    static func me() throws -> URL {
+        return try URLComponents(rootPath: "/me").createURL()
+    }
 }
 
 // MARK: - URLComponents utils
