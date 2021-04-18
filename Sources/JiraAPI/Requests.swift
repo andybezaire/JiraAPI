@@ -26,4 +26,8 @@ public extension JiraAPI.Request {
     static func me() throws -> URLRequest {
         URLRequest(url: try JiraAPI.URL.me())
     }
+    
+    static func allProjects(cloudID: JiraAPI.Auth.CloudID, startAt: Int) throws -> URLRequest {
+        URLRequest(url: try JiraAPI.URL.allProjects(cloudID: cloudID, startAt: startAt))
+    }
 }
