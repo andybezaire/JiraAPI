@@ -24,6 +24,13 @@ public extension JiraAPI.URL {
     static func me() throws -> URL {
         return try URLComponents(rootPath: "/me").createURL()
     }
+    
+    /// `"/project/search?startAt=x"`
+    static func allProjects(cloudID: String, startAt index: Int = 0) throws -> URL {
+        let startAt = URLQueryItem(name: "startAt", value: "\(index)")
+        return try URLComponents(cloudID: cloudID, path: "/project/search", queryItems: [startAt]).createURL()
+    }
+
 }
 
 // MARK: - URLComponents utils
