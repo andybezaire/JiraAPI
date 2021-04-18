@@ -19,26 +19,31 @@ public extension JiraAPI.Auth.Request {
     static func oauthToken(
         clientID: ClientID, clientSecret: ClientSecret, code: Code, redirectURI: RedirectURI
     ) throws -> URLRequest {
-        URLRequest(url: try JiraAPI.Auth.URL.oauthToken())
-            .method(.POST)
-            .header(.contentTypeApplicationJSON)
-            .body(
-                JiraAPI.Models.OauthTokenRequestBody(
-                    clientID: clientID, clientSecret: clientSecret, code: code, redirectURI: redirectURI
-                )
+        URLRequest(
+            url: try JiraAPI.Auth.URL.oauthToken(),
+            method: .POST,
+            headers: [.contentTypeApplicationJSON],
+            body: JiraAPI.Models.OauthTokenRequestBody(
+                clientID: clientID,
+                clientSecret: clientSecret,
+                code: code,
+                redirectURI: redirectURI
             )
+        )
     }
 
     static func oauthTokenRefresh(
         clientID: ClientID, clientSecret: ClientSecret, refreshToken: RefreshToken
     ) throws -> URLRequest {
-        URLRequest(url: try JiraAPI.Auth.URL.oauthToken())
-            .method(.POST)
-            .header(.contentTypeApplicationJSON)
-            .body(
-                JiraAPI.Models.OauthTokenRefreshRequestBody(
-                    clientID: clientID, clientSecret: clientSecret, refreshToken: refreshToken
-                )
+        URLRequest(
+            url: try JiraAPI.Auth.URL.oauthToken(),
+            method: .POST,
+            headers: [.contentTypeApplicationJSON],
+            body: JiraAPI.Models.OauthTokenRefreshRequestBody(
+                clientID: clientID,
+                clientSecret: clientSecret,
+                refreshToken: refreshToken
             )
+        )
     }
 }

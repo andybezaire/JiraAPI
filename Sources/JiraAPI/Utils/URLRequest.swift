@@ -19,13 +19,13 @@ extension URLRequest {
         case acceptApplicationJSON
     }
 
-    func method(_ method: HTTPMethod) -> URLRequest {
+    func settingMethod(_ method: HTTPMethod) -> URLRequest {
         var request = self
         request.httpMethod = method.rawValue
         return request
     }
 
-    func header(_ header: HTTPHeader) -> URLRequest {
+    func addingHeader(_ header: HTTPHeader) -> URLRequest {
         var request = self
         switch header {
         case .contentTypeApplicationJSON:
@@ -38,9 +38,20 @@ extension URLRequest {
         return request
     }
 
-    func body<T>(_ body: T) -> URLRequest where T: Encodable {
+    private func addingHeaders(_ headers: [HTTPHeader]) -> URLRequest {
+        headers.reduce(self) { $0.addingHeader($1) }
+    }
+
+    func addingBody<T>(_ body: T) -> URLRequest where T: Encodable {
         var request = self
         request.httpBody = try? JSONEncoder().encode(body)
         return request
+    }
+
+    init<T>(url: URL, method: HTTPMethod, headers: [HTTPHeader], body: T) where T: Encodable {
+        self = URLRequest(url: url)
+            .settingMethod(method)
+            .addingHeaders(headers)
+            .addingBody(body)
     }
 }
