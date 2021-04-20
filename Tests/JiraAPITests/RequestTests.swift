@@ -26,7 +26,8 @@ final class RequestTests: XCTestCase {
         let expectedURL = "https://api.atlassian.com" +
             "/ex/jira" +
             "/11223344-a1b2-3b33-c444-def123456789" +
-            "/rest/api/3/myself"
+            "/rest/api/3" +
+            "/myself"
 
         XCTAssertEqual(request.url?.absoluteString, expectedURL, "should be correct myself url")
 
@@ -44,9 +45,45 @@ final class RequestTests: XCTestCase {
         XCTAssertEqual(request.httpMethod, "GET", "should be get request")
     }
 
+    func testAllProducts() throws {
+        let request: URLRequest = try JiraAPI.Request.allProjects(cloudID: "11223344-a1b2-3b33-c444-def123456789")
+
+        let expectedURL = "https://api.atlassian.com" +
+            "/ex/jira" +
+            "/11223344-a1b2-3b33-c444-def123456789" +
+            "/rest/api/3" +
+            "/project/search" +
+            "?startAt=0"
+
+
+        XCTAssertEqual(request.url?.absoluteString, expectedURL, "should be correct url")
+
+        XCTAssertEqual(request.httpMethod, "GET", "should be get request")
+    }
+
+    func testAllProducts1() throws {
+        let request: URLRequest = try JiraAPI.Request.allProjects(
+            cloudID: "11223344-a1b2-3b33-c444-def123456789",
+            startAt: 1
+        )
+
+        let expectedURL = "https://api.atlassian.com" +
+            "/ex/jira" +
+            "/11223344-a1b2-3b33-c444-def123456789" +
+            "/rest/api/3" +
+            "/project/search" +
+            "?startAt=1"
+
+
+        XCTAssertEqual(request.url?.absoluteString, expectedURL, "should be correct url")
+
+        XCTAssertEqual(request.httpMethod, "GET", "should be get request")
+    }
+
     static var allTests = [
         ("testCloudResources", testCloudResources),
         ("testMyself", testMyself),
         ("testMe", testMe),
+        ("testAllProducts", testAllProducts),
     ]
 }
